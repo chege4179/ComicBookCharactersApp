@@ -11,11 +11,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil.annotation.ExperimentalCoilApi
 import com.peterchege.dccomicsapp.ui.components.CharacterCard
+import com.peterchege.dccomicsapp.ui.theme.GoogleBlackColor
 import com.peterchege.dccomicsapp.util.Screens
 
 @OptIn(ExperimentalCoilApi::class)
@@ -28,7 +30,7 @@ fun AllCharactersScreen(
     val scaffoldState = rememberScaffoldState()
     Scaffold(
         scaffoldState = scaffoldState,
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier.fillMaxSize().background(GoogleBlackColor),
         topBar = {
             TopAppBar(
                 title = {
@@ -39,7 +41,7 @@ fun AllCharactersScreen(
                 backgroundColor = MaterialTheme.colors.primary)
         }
     ) {
-        Box(modifier = Modifier.fillMaxSize()) {
+        Box(modifier = Modifier.fillMaxSize().background(GoogleBlackColor)) {
             if (viewModel.isLoading.value) {
                 CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
             }
@@ -59,7 +61,7 @@ fun AllCharactersScreen(
 
                 LazyVerticalGrid(
                     columns = GridCells.Fixed(2),
-                    Modifier.background(MaterialTheme.colors.background)
+                    Modifier.background(GoogleBlackColor)
                 ) {
                     items(viewModel.characters.value) { character ->
                         Column(

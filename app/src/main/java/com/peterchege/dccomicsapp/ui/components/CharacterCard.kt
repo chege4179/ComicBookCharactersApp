@@ -15,11 +15,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.SubcomposeAsyncImage
 import coil.compose.rememberImagePainter
 import com.peterchege.dccomicsapp.models.Character
+import com.peterchege.dccomicsapp.ui.theme.DcBlueColor
+import com.peterchege.dccomicsapp.ui.theme.GoogleBlackColor
 
 
 @ExperimentalCoilApi
@@ -33,13 +36,14 @@ fun CharacterCard(
         modifier = Modifier
             .padding(5.dp)
             .fillMaxWidth()
+            .background(GoogleBlackColor)
             .clickable {
                 onNavigateToSingleCharacterScreen(character.id.toString())
             }
         ,
         ) {
         Column(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth().background(GoogleBlackColor),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
@@ -70,8 +74,9 @@ fun CharacterCard(
                     verticalArrangement = Arrangement.Center
                 ) {
                     Text(
-
-                        text = character.name
+                        color = DcBlueColor,
+                        text = character.name,
+                        fontWeight = FontWeight.Bold
                     )
                 }
             }

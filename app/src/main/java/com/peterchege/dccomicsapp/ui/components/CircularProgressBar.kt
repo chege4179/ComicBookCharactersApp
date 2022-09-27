@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-
+import com.peterchege.dccomicsapp.ui.theme.DcBlueColor
 
 
 @Composable
@@ -66,7 +66,7 @@ fun CircularProgressBar(
         }
         Text(
             text = (number).toString(),
-            color = Color.Black,
+            color = DcBlueColor,
             fontSize = fontSize,
             fontWeight = FontWeight.Bold
         )
