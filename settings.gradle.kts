@@ -13,9 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.peterchege.dccomicsapp.util
-
-object Screens {
-    const val ALL_CHARACTER_SCREENS= "ALL_CHARACTER_SCREENS"
-    const val SINGLE_CHARACTER_SCREEN= "SINGLE_CHARACTER_SCREEN"
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
 }
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "DCComicsApp"
+include (":app")
